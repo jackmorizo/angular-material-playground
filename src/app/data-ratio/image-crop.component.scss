@@ -1,0 +1,112 @@
+.dataratio {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    > video {
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        -moz-transform: translateY(-50%) translateX(-50%);
+        -ms-transform: translateY(-50%) translateX(-50%);
+        -o-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        margin: 0 auto;
+    }
+
+    &.panorama > video {
+        width: 100%;
+        height: auto;
+    }
+
+    &.landscape > video {
+        height: 100%;
+        width: auto;
+        max-width: none;
+    }
+
+    > img {
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        -moz-transform: translateY(-50%) translateX(-50%);
+        -ms-transform: translateY(-50%) translateX(-50%);
+        -o-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        margin: 0 auto;
+    }
+
+    &.panorama > img {
+        width: 100%;
+        height: auto;
+    }
+
+    &.landscape > img {
+        height: 100%;
+        width: auto;
+        max-width: none;
+    }
+    &.invert {
+        &.panorama > img {
+            height: 100%;
+            width: auto;
+            max-width: none;
+        }
+
+        &.landscape > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &.v_align_top>img,
+    &.v_align_bottom>img {
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%)
+    }
+    
+    &.h_align_left>img,
+    &.h_align_right>img {
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+    
+    &.v_align_top.h_align_left>img,
+    &.v_align_top.h_align_right>img,
+    &.v_align_bottom.h_align_left>img,
+    &.v_align_bottom.h_align_right>img {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none
+    }
+    
+    &.v_align_top>img {
+        top: 0
+    }
+    
+    &.v_align_bottom>img {
+        top: auto;
+        bottom: 0
+    }
+    
+    &.h_align_left>img {
+        left: 0
+    }
+    
+    &.h_align_right>img {
+        left: auto;
+        right: 0
+    }
+}
